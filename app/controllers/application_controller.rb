@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate
-  	if !signed in?
+  	if !signed_in?
   	redirect_to new_session_path
     end
   end
@@ -22,4 +22,5 @@ class ApplicationController < ActionController::Base
   def signed_in?
   	current_user # nil or #<User>
   end
+  helper_method :signed_in?
 end
