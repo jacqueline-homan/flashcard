@@ -6,6 +6,7 @@ Flashcard::Application.routes.draw do
 #  get "/decks/:id/edit" => "decks#edit"
 #  put "/decks/:id" => "decks#update"
 #  delete "/decks/:id" => "decks#destroy"
+  resources :users, only: [:new, :create]
   resources :decks do
     resources :cards, except: :index
   end
