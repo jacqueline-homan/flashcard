@@ -1,6 +1,6 @@
 class DecksController < ApplicationController
   def index
-  	@decks = Deck.all # Instance variables in controllers --> instance variables in view
+  	@decks = current_user.decks # Instance variables in controllers --> instance variables in view
   end
 
   def show
