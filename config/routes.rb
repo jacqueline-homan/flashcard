@@ -7,7 +7,7 @@ Flashcard::Application.routes.draw do
 #  put "/decks/:id" => "decks#update"
 #  delete "/decks/:id" => "decks#destroy"
   root to: "home#index"
-  resources :sessions, only: [:new, :create, :destroy]
+  resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
   resources :decks do
     resources :cards, except: :index
