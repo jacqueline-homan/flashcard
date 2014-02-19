@@ -15,7 +15,8 @@ class DecksController < ApplicationController
   end
 
   def create
-  	@deck = Deck.new(params[:deck]) # Why isn't the arg inside the params hash with indifferent access ":name" instead of ":deck"?
+    @deck = current_user.decks.new(params[:deck])
+  	#@deck = Deck.new(params[:deck]) # Why isn't the arg inside the params hash with indifferent access ":name" instead of ":deck"?
   	@deck.save
   	redirect_to decks_path
   end
